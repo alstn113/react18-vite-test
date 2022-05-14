@@ -14,5 +14,5 @@ yarn add -D vite-tsconfig-paths
 // 폴더 정리
 
 // 주요 라이브러리
-yarn add react-router-dom axios recoil react-query styled-components
+yarn add react-router-dom axios recoil react-query styled-components styled-reset
 yarn add @types/react-router-dom @types/styled-components

@@ -1,6 +1,6 @@
 import { DefaultTheme } from 'styled-components';
 
-export const lightMode: DefaultTheme = {
+export const theme: DefaultTheme = {
   textColor: 'black',
   accentColor: 'red',
   lightTextColor: 'gray',
@@ -11,7 +11,7 @@ export const lightMode: DefaultTheme = {
   errorMessageColor: 'red',
 };
 //darkMode 예정
-export const darkMode: DefaultTheme = {
+export const dartTheme: DefaultTheme = {
   textColor: 'white',
   accentColor: 'blue',
   lightTextColor: 'gray',
