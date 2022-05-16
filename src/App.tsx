@@ -1,6 +1,5 @@
 import { ThemeProvider } from 'styled-components';
 import { theme } from './styles/theme';
-import GlobalStyle from './styles/global-style';
 import { Route, Routes } from 'react-router-dom';
 import HomePage from './pages/Home';
 import RegisterPage from './pages/Register';
@@ -11,11 +10,12 @@ import WritePage from './pages/Write';
 import SettingPage from './pages/Setting';
 import NotFoundPage from './pages/NotFound';
 import SearchPage from './pages/Search';
+import Core from './components/Core';
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle />
+      <Core />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/register" element={<RegisterPage />} />
