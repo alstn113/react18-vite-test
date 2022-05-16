@@ -1,4 +1,4 @@
-import useGetAllArticle from '../../hooks/query/useGetAllArticles';
+import useGetAllArticle from '../../hooks/query/article/useGetAllArticles';
 
 const ArticleList = () => {
   const { data } = useGetAllArticle();
