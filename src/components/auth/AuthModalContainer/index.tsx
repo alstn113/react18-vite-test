@@ -1,16 +1,17 @@
-import { useRecoilState } from 'recoil';
-import { authModalState } from '../../../store/modal';
+import { useStore } from '../../../store/store';
+import AuthForm from '../AuthForm';
 import AuthModal from '../AuthModal';
 
-const AuthModalContainer = () => {
-  const [authModal, setAuthModal] = useRecoilState(authModalState);
-  const onClose = () => {
-    setAuthModal({ visible: false });
-  };
+interface AuthModalContainerProps {
+  visible: boolean;
+}
+
+const AuthModalContainer = ({ visible }: AuthModalContainerProps) => {
+  const { closeAuthModal } = useStore();
   return (
-    <>
-      <AuthModal visible={authModal.visible} onClose={onClose} />
-    </>
+    <AuthModal visible={visible} onClose={closeAuthModal}>
+      <AuthForm />
+    </AuthModal>
   );
 };
 

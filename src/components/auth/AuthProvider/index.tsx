@@ -1,17 +1,17 @@
 import { useEffect } from 'react';
-import { useSetRecoilState } from 'recoil';
-import useGetCurrentUser from '../../../hooks/query/auth/useGetCurrentUser';
-import { userState } from '../../../store/user';
+import { useQuery } from 'react-query';
+import UserAPI from '../../../api/user';
+import { useStore } from '../../../store/store';
 
 const AuthProvider = () => {
-  const { data: getCurrentUser } = useGetCurrentUser();
-  const user = getCurrentUser ?? undefined;
-  const setUser = useSetRecoilState(userState);
+  const { setUser } = useStore();
+  const getCurrentUser = useQuery('getCurrentUser', UserAPI.getCurrentUser);
+  const user = getCurrentUser.data ?? undefined;
 
   useEffect(() => {
     if (user === undefined) return;
     if (user === null) return;
-    setUser({ user: user.username });
+    setUser(user);
   }, [user, setUser]);
 };
 

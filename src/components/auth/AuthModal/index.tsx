@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components';
-import AuthForm from '../AuthForm';
 
 interface AuthModalProps {
   visible: boolean;
   onClose: () => void;
+  children: React.ReactNode;
 }
 
 const AuthModal = ({ visible, onClose }: AuthModalProps) => {
@@ -11,7 +11,6 @@ const AuthModal = ({ visible, onClose }: AuthModalProps) => {
     <AuthModalWrapper visible={visible}>
       <div>AuthModal</div>
       <button onClick={onClose}>버튼</button>
-      <AuthForm />
     </AuthModalWrapper>
   );
 };
